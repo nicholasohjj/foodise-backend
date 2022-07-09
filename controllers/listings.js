@@ -18,7 +18,7 @@ listingsRouter.get('/:id', (req, res, next) => {
       }
     })
     .catch((error) => next(error));
-}); 
+});
 
 listingsRouter.delete('/:id', (req, res, next) => {
   Listing.findByIdAndRemove(req.params.id)
@@ -76,7 +76,7 @@ listingsRouter.put('/:id', (req, res, next) => {
 
 
 
-  Listing.findByIdAndUpdate(req.params.id, listing, { new: true })
+  Listing.findby(req.params.id, listing, { new: true })
     .then((updatedListing) => {
       res.json(updatedListing.toJSON());
     })
