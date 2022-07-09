@@ -18,7 +18,7 @@ listingsRouter.get('/:id', (req, res, next) => {
       }
     })
     .catch((error) => next(error));
-});
+}); 
 
 listingsRouter.delete('/:id', (req, res, next) => {
   Listing.findByIdAndRemove(req.params.id)
