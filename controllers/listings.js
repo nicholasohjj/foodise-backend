@@ -76,7 +76,7 @@ listingsRouter.put('/:id', (req, res, next) => {
 
 
 
-  Listing.findby(req.params.id, listing, { new: true })
+  Listing.findByIdAndUpdate(req.params.id, listing, { new: true })
     .then((updatedListing) => {
       res.json(updatedListing.toJSON());
     })
